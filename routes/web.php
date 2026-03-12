@@ -9,6 +9,18 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('home');
 
+Route::get('/map-search', function () {
+    return Inertia::render('MapSearch');
+})->name('map-search');
+
+// Route::get('/research', function () {
+//     return Inertia::render('Research');
+// })->name('research');
+
+// Route::get('/cma', function () {
+//     return Inertia::render('Cma');
+// })->name('cma');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
