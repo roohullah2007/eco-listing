@@ -1,4 +1,4 @@
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { useState } from 'react';
 import Header from '@/Components/Header';
 
@@ -105,7 +105,7 @@ function SearchIcon() {
 
 function ListingCard({ listing }: { listing: typeof listings[0] }) {
     return (
-        <div className="group cursor-pointer overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow hover:shadow-lg">
+        <Link href={`/property/${listing.id}`} className="group cursor-pointer overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow hover:shadow-lg block">
             {/* Image */}
             <div className="relative" style={{ height: '180px' }}>
                 <img
@@ -124,6 +124,7 @@ function ListingCard({ listing }: { listing: typeof listings[0] }) {
                 <button
                     className="absolute right-3 top-3 flex items-center justify-center rounded-full transition-colors hover:bg-black/30"
                     style={{ width: '34px', height: '34px', backgroundColor: 'rgba(0,0,0,0.25)' }}
+                    onClick={(e) => e.preventDefault()}
                 >
                     <HeartIcon />
                 </button>
@@ -157,7 +158,7 @@ function ListingCard({ listing }: { listing: typeof listings[0] }) {
                     MLS&reg; {listing.mls}
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 

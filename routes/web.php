@@ -13,6 +13,10 @@ Route::get('/map-search', function () {
     return Inertia::render('MapSearch');
 })->name('map-search');
 
+Route::get('/property/{id}', function ($id) {
+    return Inertia::render('PropertyDetails', ['id' => $id]);
+})->name('property.details');
+
 // Route::get('/research', function () {
 //     return Inertia::render('Research');
 // })->name('research');
