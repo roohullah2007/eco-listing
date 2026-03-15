@@ -43,7 +43,7 @@ function HeroSection() {
                             ))}
                         </div>
                         <div className="mt-4 flex items-center rounded-full bg-white shadow-lg" style={{ width: '498px', height: '48px' }}>
-                            <input type="text" placeholder="Address, School, City, Zip or Neighborhood" className="h-full flex-1 rounded-l-full border-0 bg-transparent pl-5 pr-2 focus:ring-0" style={{ fontSize: '16px', fontWeight: 400, color: 'rgb(0, 0, 0)', lineHeight: '18px' }} />
+                            <input type="text" placeholder="Address, City or Neighborhood in BC" className="h-full flex-1 rounded-l-full border-0 bg-transparent pl-5 pr-2 focus:ring-0" style={{ fontSize: '16px', fontWeight: 400, color: 'rgb(0, 0, 0)', lineHeight: '18px' }} />
                             <button className="mr-1 flex items-center justify-center gap-2 rounded-full bg-[#1A1816] text-white transition-colors hover:bg-[#2a2826]" style={{ width: '130px', height: '40px', fontSize: '16px', fontWeight: 500, lineHeight: '16px' }}>
                                 Search
                                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -65,7 +65,7 @@ const processSteps = [
     {
         step: '02',
         title: 'STRATEGIC MARKETING',
-        description: 'Your listing launches on entire Real Estate Ecosystem including, Zillow, Realtor.ca, and social channels with premium photography and video assets.',
+        description: 'Your listing launches on Realtor.ca, REW.ca, and social channels across British Columbia with premium photography and video assets.',
     },
     {
         step: '03',
@@ -507,19 +507,19 @@ const testimonials = [
         quote: 'EcoListing transformed how we sold our home. The digital twin technology showcased our property in a way photos simply couldn\'t. We received multiple offers within days.',
         initials: 'SJ',
         name: 'Sarah Jenkins',
-        role: 'Home Seller • Austin, TX',
+        role: 'Home Seller • Vancouver, BC',
     },
     {
         quote: 'The transparency of the platform gave me total peace of mind. I could track every viewing and offer in real-time. It\'s the modern real estate experience I\'ve been waiting for.',
         initials: 'MC',
         name: 'Michael Chen',
-        role: 'Property Investor • Seattle, WA',
+        role: 'Property Investor • Richmond, BC',
     },
     {
         quote: 'From the accurate valuation to the final closing, everything was seamless. The tools provided are truly industry-leading and made the complex process feel simple.',
         initials: 'ER',
         name: 'Elena Rodriguez',
-        role: 'Home Seller • Miami, FL',
+        role: 'Home Seller • Surrey, BC',
     },
 ];
 
@@ -669,7 +669,7 @@ function CmaSection() {
 export default function Welcome() {
     return (
         <>
-            <Head title="Find Eco-Friendly Homes in Canada" />
+            <Head title="British Columbia Real Estate - EcoListing.ca" />
             <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
                 <Header />
 

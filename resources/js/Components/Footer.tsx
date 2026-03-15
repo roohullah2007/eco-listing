@@ -14,7 +14,7 @@ export default function Footer() {
                             />
                         </div>
                         <p className="mt-6" style={{ fontSize: '15px', lineHeight: '24px', color: '#94a3b8' }}>
-                            The architecture of modern real estate. We synthesize high-performance technology with expert strategy to deliver superior outcomes.
+                            Serving British Columbia's real estate market. We synthesize high-performance technology with expert strategy to deliver superior outcomes for BC homeowners.
                         </p>
                         <div className="mt-8 rounded-2xl border border-gray-700 p-5" style={{ backgroundColor: '#1a2332' }}>
                             <p className="italic" style={{ fontSize: '14px', lineHeight: '22px', color: '#94a3b8' }}>

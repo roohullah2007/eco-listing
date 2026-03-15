@@ -1,3 +1,89 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Leaflet price marker overrides */
+.price-marker-icon {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.leaflet-marker-icon.price-marker-icon {
+    background: transparent !important;
+    border: none !important;
+}
+/* Hide default leaflet marker shadow images */
+.price-marker-icon .leaflet-marker-shadow {
+    display: none !important;
+}
+
+/* Listing card popup - strip Leaflet default styling */
+.listing-card-popup .leaflet-popup-content-wrapper {
+    padding: 0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18) !important;
+    overflow: hidden;
+}
+.listing-card-popup .leaflet-popup-content {
+    margin: 0 !important;
+    width: auto !important;
+}
+.listing-card-popup .leaflet-popup-tip-container {
+    display: none !important;
+}
+.listing-card-popup .leaflet-popup-close-button {
+    display: none !important;
+}
+
+/* Dual range slider thumbs — track is pointer-events:none, only thumbs receive events */
+.range-thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2563eb;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+}
+.range-thumb::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2563eb;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    pointer-events: auto;
+}
+.range-thumb::-webkit-slider-runnable-track {
+    background: transparent;
+}
+.range-thumb::-moz-range-track {
+    background: transparent;
+}
+
+/* Cluster marker icon container — no default Leaflet chrome */
+.cluster-marker-icon {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Override default MarkerCluster styles — we use custom dark navy circles */
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+    background: none !important;
+}
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+    background: none !important;
+}
+.marker-cluster {
+    background: none !important;
+}

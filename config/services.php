@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'repliers' => [
+        'key' => env('REPLIERS_API_KEY'),
+        'url' => env('REPLIERS_API_URL', 'https://api.repliers.io'),
+    ],
+
 ];
