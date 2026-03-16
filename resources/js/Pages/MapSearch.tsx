@@ -36,6 +36,7 @@ interface Listing {
     images: string[];
     photoCount: number;
     daysOnMarket: number;
+    updatedOn?: string;
 }
 
 interface Pagination {
@@ -624,7 +625,7 @@ export default function MapSearch({ listings = [], pagination, filters = {} }: P
             ...overrides,
         };
         // Clean empty values
-        return Object.fromEntries(Object.entries(f).filter(([, v]) => v !== undefined && v !== ''));
+        return Object.fromEntries(Object.entries(f).filter(([, v]) => v !== undefined && v !== '')) as Record<string, string>;
     };
 
     const doSearch = (overrides: Record<string, string | undefined> = {}) => {

@@ -36,7 +36,7 @@ function GlassCard({ children, className = '', style = {} }: { children: React.R
     );
 }
 
-function GlassCardLight({ children, className = '', hover = true }: { children: React.ReactNode; className?: string; hover?: boolean }) {
+function GlassCardLight({ children, className = '', hover = true, style }: { children: React.ReactNode; className?: string; hover?: boolean; style?: React.CSSProperties }) {
     return (
         <div
             className={`rounded-2xl border border-gray-200/60 transition-all ${hover ? 'hover:border-gray-300 hover:shadow-xl hover:-translate-y-1' : ''} ${className}`}
@@ -45,6 +45,7 @@ function GlassCardLight({ children, className = '', hover = true }: { children: 
                 backdropFilter: 'blur(16px)',
                 WebkitBackdropFilter: 'blur(16px)',
                 boxShadow: '0 4px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
+                ...style,
             }}
         >
             {children}
