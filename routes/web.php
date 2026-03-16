@@ -11,6 +11,56 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('home');
 
+Route::get('/v2', function (RepliersService $repliers) {
+    $featuredListings = [];
+    try {
+        // Fetch from different price brackets for variety (200k-400k, 400k-600k, 600k-999k)
+        $ranges = [
+            ['minPrice' => 200000, 'maxPrice' => 399999],
+            ['minPrice' => 400000, 'maxPrice' => 599999],
+            ['minPrice' => 600000, 'maxPrice' => 999999],
+        ];
+        foreach ($ranges as $range) {
+            $result = $repliers->searchListings(array_merge($range, [
+                'resultsPerPage' => 2,
+                'sortBy' => 'updatedOnDesc',
+            ]));
+            $listings = $result['listings'] ?? [];
+            $featuredListings = array_merge($featuredListings, $listings);
+        }
+        // Shuffle so the price order feels natural, not ascending
+        shuffle($featuredListings);
+    } catch (\Exception $e) {}
+
+    return Inertia::render('WelcomeV2', [
+        'featuredListings' => $featuredListings,
+    ]);
+})->name('home-v2');
+
+Route::get('/v3', function (RepliersService $repliers) {
+    $featuredListings = [];
+    try {
+        $ranges = [
+            ['minPrice' => 200000, 'maxPrice' => 399999],
+            ['minPrice' => 400000, 'maxPrice' => 599999],
+            ['minPrice' => 600000, 'maxPrice' => 999999],
+        ];
+        foreach ($ranges as $range) {
+            $result = $repliers->searchListings(array_merge($range, [
+                'resultsPerPage' => 2,
+                'sortBy' => 'updatedOnDesc',
+            ]));
+            $listings = $result['listings'] ?? [];
+            $featuredListings = array_merge($featuredListings, $listings);
+        }
+        shuffle($featuredListings);
+    } catch (\Exception $e) {}
+
+    return Inertia::render('WelcomeV3', [
+        'featuredListings' => $featuredListings,
+    ]);
+})->name('home-v3');
+
 Route::get('/map-search', function (Request $request, RepliersService $repliers) {
     try {
         $filters = array_filter([
@@ -108,21 +158,8 @@ Route::get('/map-search', function (Request $request, RepliersService $repliers)
             }
         }
 
-        // Only fetch listings if user has applied at least one search/filter criteria
-        $hasSearch = $request->hasAny([
-            'city', 'area', 'streetAddress', 'minPrice', 'maxPrice',
-            'bedrooms', 'bathrooms', 'style', 'minSqft', 'maxSqft',
-            'minLotSize', 'maxLotSize', 'minYearBuilt', 'maxYearBuilt',
-            'maxMaintFee', 'daysOnMarket', 'polygon', 'mapBounds',
-        ]);
-
-        if ($hasSearch) {
-            $results = $repliers->searchListings($filters);
-            $listings = $results['listings'] ?? [];
-        } else {
-            $results = [];
-            $listings = [];
-        }
+        $results = $repliers->searchListings($filters);
+        $listings = $results['listings'] ?? [];
     } catch (\Exception $e) {
         $results = [];
         $listings = [];
