@@ -83,12 +83,16 @@ class RepliersService
             $response = $this->get('/listings', $params);
         }
 
-        // Resolve image URLs and clean sample markers for all listings
+        // Resolve image URLs, clean sample markers, and filter out listings without images
         if (!empty($response['listings'])) {
             foreach ($response['listings'] as &$listing) {
                 self::resolveListingImages($listing);
                 self::cleanSampleMarkers($listing);
             }
+            $response['listings'] = array_values(array_filter(
+                $response['listings'],
+                fn($l) => !empty($l['images'])
+            ));
         }
 
         return $response;
@@ -121,6 +125,10 @@ class RepliersService
                 self::resolveListingImages($listing);
                 self::cleanSampleMarkers($listing);
             }
+            $response['listings'] = array_values(array_filter(
+                $response['listings'],
+                fn($l) => !empty($l['images'])
+            ));
         }
 
         return $response;
