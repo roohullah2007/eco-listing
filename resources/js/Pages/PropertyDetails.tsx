@@ -211,7 +211,7 @@ export default function PropertyDetails({ mlsNumber, listing, similarListings = 
                     </div>
 
                     {/* Image Gallery */}
-                    {images.length > 0 && (
+                    {images.length > 0 ? (
                         <div className="mt-6 flex gap-[17px]" style={{ height: '645px' }}>
                             <div className="relative flex-1 cursor-pointer overflow-hidden rounded-xl" style={{ minWidth: '800px' }} onClick={() => openGallery(0)}>
                                 <img src={images[0]} alt="Property main" className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.02]" />
@@ -232,6 +232,13 @@ export default function PropertyDetails({ mlsNumber, listing, similarListings = 
                                     )}
                                 </div>
                             )}
+                        </div>
+                    ) : (
+                        <div className="mt-6 flex items-center justify-center rounded-xl bg-gray-100" style={{ height: '400px' }}>
+                            <div className="text-center">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
+                                <p className="mt-3" style={{ fontSize: '15px', color: '#9ca3af' }}>No photos available for this listing</p>
+                            </div>
                         </div>
                     )}
 
