@@ -236,8 +236,8 @@ export default function PropertyDetails({ mlsNumber, listing, similarListings = 
                     )}
 
                     {/* Content + Sidebar */}
-                    <div className="mt-8 flex gap-12">
-                        <div className="min-w-0 flex-1" style={{ maxWidth: '60%' }}>
+                    <div className="mt-8 flex justify-between">
+                        <div className="min-w-0" style={{ maxWidth: '55%' }}>
 
                             {/* Stats */}
                             <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#1A1816' }}>{streetAddress}</h2>
@@ -349,7 +349,7 @@ export default function PropertyDetails({ mlsNumber, listing, similarListings = 
                         </div>
 
                         {/* Sidebar */}
-                        <div className="shrink-0" style={{ width: '380px' }}>
+                        <div className="shrink-0" style={{ width: '318px' }}>
                             <div className="sticky top-24 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
                                 <div className="flex items-baseline gap-1.5">
                                     <span style={{ fontSize: '28px', fontWeight: 700, color: '#1A1816' }}>{formatPrice(listing.listPrice)}</span>
@@ -433,6 +433,9 @@ export default function PropertyDetails({ mlsNumber, listing, similarListings = 
                             </div>
                         </div>
                     )}
+
+                    {/* Spacer before footer */}
+                    <div className="pb-16" />
                 </div>
 
                 <Footer />
