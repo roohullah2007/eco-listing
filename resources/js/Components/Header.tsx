@@ -64,7 +64,7 @@ export default function Header() {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const isServicesActive = currentPath === '/listing-services';
+    const isServicesActive = currentPath === '/listing-services' || currentPath === '/how-we-sell';
 
     return (
         <nav
@@ -150,7 +150,7 @@ export default function Header() {
                                         </div>
                                     </Link>
                                     <Link
-                                        href="/listing-services#how-we-sell"
+                                        href="/how-we-sell"
                                         prefetch
                                         onClick={() => setDropdownOpen(false)}
                                         className="flex items-center gap-3 px-5 py-3 transition-colors hover:bg-gray-50"

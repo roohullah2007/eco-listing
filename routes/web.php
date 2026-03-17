@@ -270,6 +270,10 @@ Route::get('/listing-services', function () {
     return Inertia::render('ListingServices');
 })->name('listing-services');
 
+Route::get('/how-we-sell', function () {
+    return Inertia::render('HowWeSell');
+})->name('how-we-sell');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
