@@ -29,8 +29,8 @@ export default function Header() {
 
     return (
         <nav
-            className="w-full shrink-0 border-b border-gray-200 bg-white"
-            style={{ height: '50px' }}
+            className="relative w-full shrink-0 border-b border-gray-200 bg-white"
+            style={{ height: '50px', zIndex: 1000 }}
         >
             <div className="mx-auto flex h-full items-center justify-between transition-all duration-500 ease-in-out" style={{ maxWidth: currentPath === '/map-search' ? '1408px' : '1280px' }}>
                 {/* Left: Logo + Nav Links */}
