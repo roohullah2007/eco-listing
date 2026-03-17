@@ -5,7 +5,7 @@ const navLinks = [
     { label: 'Map Search', href: '/map-search' },
     { label: 'Research', href: '/research' },
     { label: 'CMA', href: '/cma' },
-    { label: 'Market Analysis', href: '#' },
+    { label: 'Market Analysis', href: '/market-analysis' },
     { label: 'Listing Services', href: '#' },
 ];
 

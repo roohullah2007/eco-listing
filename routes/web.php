@@ -212,6 +212,54 @@ Route::get('/cma', function () {
     return Inertia::render('Cma');
 })->name('cma');
 
+Route::get('/market-analysis', function (Request $request, RepliersService $repliers) {
+    $city = $request->query('city', 'Vancouver');
+    $activeListings = [];
+    $soldListings = [];
+    $stats = ['activeCount' => 0, 'soldCount' => 0, 'avgPrice' => 0, 'avgDom' => 0];
+
+    try {
+        // Fetch active listings for this city
+        $activeResult = $repliers->searchListings([
+            'city' => $city,
+            'status' => 'A',
+            'type' => 'sale',
+            'resultsPerPage' => 8,
+            'sortBy' => 'updatedOnDesc',
+        ]);
+        $activeListings = $activeResult['listings'] ?? [];
+        $stats['activeCount'] = $activeResult['count'] ?? count($activeListings);
+
+        // Calculate average price and DOM from active listings
+        if (!empty($activeListings)) {
+            $prices = array_map(fn($l) => (int) ($l['listPrice'] ?? 0), $activeListings);
+            $doms = array_map(fn($l) => (int) ($l['daysOnMarket'] ?? 0), $activeListings);
+            $stats['avgPrice'] = round(array_sum($prices) / count($prices));
+            $stats['avgDom'] = round(array_sum($doms) / count($doms));
+        }
+    } catch (\Exception $e) {}
+
+    try {
+        // Fetch sold listings for this city
+        $soldResult = $repliers->searchListings([
+            'city' => $city,
+            'status' => 'U',
+            'type' => 'sale',
+            'resultsPerPage' => 8,
+            'sortBy' => 'updatedOnDesc',
+        ]);
+        $soldListings = $soldResult['listings'] ?? [];
+        $stats['soldCount'] = $soldResult['count'] ?? count($soldListings);
+    } catch (\Exception $e) {}
+
+    return Inertia::render('MarketAnalysis', [
+        'activeListings' => $activeListings,
+        'soldListings' => $soldListings,
+        'stats' => $stats,
+        'selectedCity' => $city,
+    ]);
+})->name('market-analysis');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
