@@ -260,6 +260,10 @@ Route::get('/market-analysis', function (Request $request, RepliersService $repl
     ]);
 })->name('market-analysis');
 
+Route::get('/listing-services', function () {
+    return Inertia::render('ListingServices');
+})->name('listing-services');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
