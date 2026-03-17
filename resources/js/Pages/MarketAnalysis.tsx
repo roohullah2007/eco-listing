@@ -193,29 +193,36 @@ export default function MarketAnalysis({ activeListings, soldListings, stats, se
             <div className="sticky top-0 z-30 border-b border-gray-200 bg-white">
                 <div className="mx-auto flex items-center justify-between px-4" style={{ maxWidth: '1280px', height: '56px' }}>
                     <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#1A1816' }}>Market Insights</h2>
-                    <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1.5 rounded-full border border-gray-200 px-3" style={{ height: '36px' }}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                    <div className="flex items-center gap-3">
+                        <div className="relative flex items-center rounded-full border border-gray-200" style={{ height: '40px', paddingLeft: '14px', paddingRight: '36px' }}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
                             <select
                                 value={city}
                                 onChange={(e) => handleCityChange(e.target.value)}
-                                className="appearance-none border-0 bg-transparent pr-4 outline-none"
-                                style={{ fontSize: '13px', fontWeight: 600, color: '#1A1816' }}
+                                className="appearance-none border-0 bg-transparent outline-none"
+                                style={{ fontSize: '14px', fontWeight: 500, color: '#1A1816', paddingRight: '8px' }}
                             >
                                 {bcCities.map((c) => <option key={c} value={c}>{c}</option>)}
                             </select>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="pointer-events-none absolute right-3"><polyline points="6 9 12 15 18 9" /></svg>
                         </div>
-                        <select className="appearance-none rounded-full border border-gray-200 bg-white px-4 outline-none" style={{ height: '36px', fontSize: '13px', fontWeight: 600, color: '#3b82f6' }}>
-                            <option>All Types</option>
-                            <option>Detached</option>
-                            <option>Condo</option>
-                            <option>Townhouse</option>
-                        </select>
-                        <select className="appearance-none rounded-full border border-gray-200 bg-white px-4 outline-none" style={{ height: '36px', fontSize: '13px', fontWeight: 600, color: '#3b82f6' }}>
-                            <option>Last Year</option>
-                            <option>Last 6 Months</option>
-                            <option>Last 3 Months</option>
-                        </select>
+                        <div className="relative flex items-center rounded-full border border-gray-200" style={{ height: '40px', paddingLeft: '16px', paddingRight: '36px' }}>
+                            <select className="appearance-none border-0 bg-transparent outline-none" style={{ fontSize: '14px', fontWeight: 500, color: '#3b82f6', paddingRight: '8px' }}>
+                                <option>All Types</option>
+                                <option>Detached</option>
+                                <option>Condo</option>
+                                <option>Townhouse</option>
+                            </select>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="pointer-events-none absolute right-3"><polyline points="6 9 12 15 18 9" /></svg>
+                        </div>
+                        <div className="relative flex items-center rounded-full border border-gray-200" style={{ height: '40px', paddingLeft: '16px', paddingRight: '36px' }}>
+                            <select className="appearance-none border-0 bg-transparent outline-none" style={{ fontSize: '14px', fontWeight: 500, color: '#3b82f6', paddingRight: '8px' }}>
+                                <option>Last Year</option>
+                                <option>Last 6 Months</option>
+                                <option>Last 3 Months</option>
+                            </select>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="pointer-events-none absolute right-3"><polyline points="6 9 12 15 18 9" /></svg>
+                        </div>
                     </div>
                 </div>
             </div>
