@@ -120,8 +120,8 @@ const faqs = [
 /* ─── Check/X Icons ─── */
 function CheckIcon() {
     return (
-        <div className="flex items-center justify-center rounded-full" style={{ width: '24px', height: '24px', backgroundColor: '#dcfce7' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+        <div className="flex items-center justify-center rounded-full" style={{ width: '24px', height: '24px', backgroundColor: '#f0f0ef' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
         </div>
     );
 }
@@ -195,7 +195,7 @@ export default function ListingServices() {
 
                             {/* CTA inside dark panel */}
                             <div style={{ padding: '16px 20px', marginTop: '8px' }}>
-                                <a href="#" className="flex w-full items-center justify-center rounded-xl text-white transition-opacity hover:opacity-90" style={{ backgroundColor: '#16a34a', height: '48px', fontSize: '14px', fontWeight: 600 }}>
+                                <a href="#" className="flex w-full items-center justify-center rounded-xl text-white transition-opacity hover:opacity-90" style={{ backgroundColor: '#ffffff', color: '#1A1816', height: '48px', fontSize: '14px', fontWeight: 600 }}>
                                     Get Started Today
                                 </a>
                             </div>
@@ -329,7 +329,7 @@ export default function ListingServices() {
                         <div>
                             <h2 style={{ fontSize: '40px', fontWeight: 800, color: '#1A1816', lineHeight: '1.15' }}>
                                 Discover Your Home's{' '}
-                                <span style={{ color: '#16a34a' }}>True Market Value</span>
+                                <span style={{ borderBottom: '3px solid #1A1816' }}>True Market Value</span>
                             </h2>
                             <p className="mt-4" style={{ fontSize: '16px', lineHeight: '26px', color: '#6b7280' }}>
                                 Get an accurate estimate by expert agent using latest market data and comparable sales.
@@ -354,7 +354,7 @@ export default function ListingServices() {
                             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
                                 {['Licensed REALTOR\u00AE', '100% Free Market Analysis', 'No sign-up required', 'Detailed CMA Reports'].map((text) => (
                                     <div key={text} className="flex items-center gap-1.5">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                                         <span style={{ fontSize: '12px', fontWeight: 500, color: '#6b7280' }}>{text}</span>
                                     </div>
                                 ))}
