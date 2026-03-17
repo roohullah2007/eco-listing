@@ -9,73 +9,82 @@ const services = [
         num: '01',
         title: 'MLS Listing',
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></svg>
         ),
         description: 'Your property gets listed on the MLS (Multiple Listing Service), which syndicates to REALTOR.ca, Zillow, and hundreds of partner sites — ensuring maximum exposure to qualified buyers across Canada.',
+        image: '/images/discover-img.png',
     },
     {
         num: '02',
         title: 'Professional Photography',
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" /><circle cx="12" cy="13" r="4" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" /><circle cx="12" cy="13" r="4" /></svg>
         ),
         description: 'Our professional photographers capture your home in the best light with HDR photography, wide-angle lenses, and expert staging guidance — creating images that make buyers stop scrolling and start calling.',
+        image: '/images/discover-img.png',
     },
     {
         num: '03',
         title: '3D Virtual Tour',
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
         ),
         description: 'Immersive 3D virtual tours let buyers explore your property room-by-room from anywhere in the world. Perfect for out-of-town buyers and pre-qualifying serious interest before in-person showings.',
+        image: '/images/discover-img.png',
     },
     {
         num: '04',
         title: 'Drone Photography',
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" /><line x1="12" y1="22" x2="12" y2="15.5" /><polyline points="22 8.5 12 15.5 2 8.5" /><polyline points="2 15.5 12 8.5 22 15.5" /><line x1="12" y1="2" x2="12" y2="8.5" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" /><line x1="12" y1="22" x2="12" y2="15.5" /><polyline points="22 8.5 12 15.5 2 8.5" /><polyline points="2 15.5 12 8.5 22 15.5" /><line x1="12" y1="2" x2="12" y2="8.5" /></svg>
         ),
         description: 'Aerial drone photography and videography showcase your property\'s full lot, neighbourhood context, and surrounding amenities — giving buyers the complete picture from above.',
+        image: '/images/discover-img.png',
     },
     {
         num: '05',
         title: 'Video Walkthrough',
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
         ),
         description: 'Professionally edited video walkthroughs bring your listing to life on social media and listing platforms. Our cinematic approach highlights the flow, feel, and features that photos alone can\'t capture.',
+        image: '/images/discover-img.png',
     },
     {
         num: '06',
         title: 'Yard Signage',
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
         ),
         description: 'Professional yard signage with a modern design and QR code directs drive-by traffic straight to your listing. Includes installation and removal — one less thing to worry about.',
+        image: '/images/discover-img.png',
     },
     {
         num: '07',
         title: 'Social Media Marketing',
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" /></svg>
         ),
         description: 'Targeted social media campaigns across Instagram, Facebook, and TikTok put your listing in front of active buyers in your area. Includes professional ad creative, audience targeting, and performance reporting.',
+        image: '/images/discover-img.png',
     },
     {
         num: '08',
         title: 'Agent-Led Showings',
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
         ),
         description: 'Our licensed REALTORS personally host showings, answer buyer questions, and provide feedback after every visit. No lockbox-only showings — your home gets the professional representation it deserves.',
+        image: '/images/discover-img.png',
     },
     {
         num: '09',
         title: 'Transaction Support',
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1816" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" /></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" /></svg>
         ),
         description: 'From offer review and negotiation to closing coordination, our team handles every step of the transaction. We work with your lawyer, the buyer\'s agent, and all parties to ensure a smooth close.',
+        image: '/images/discover-img.png',
     },
 ];
 
@@ -135,61 +144,79 @@ export default function ListingServices() {
             <Header />
 
             {/* ═══ Section 1: Hero + Service Tabs ═══ */}
-            <section className="bg-white" style={{ paddingTop: '72px', paddingBottom: '72px' }}>
+            <section className="bg-white" style={{ paddingTop: '64px', paddingBottom: '80px' }}>
                 <div className="mx-auto px-4" style={{ maxWidth: '1280px' }}>
-                    <div className="grid items-start gap-16 lg:grid-cols-2">
-                        {/* Left: Service Tabs */}
-                        <div>
-                            <p className="uppercase tracking-widest" style={{ fontSize: '12px', fontWeight: 700, color: '#9ca3af', letterSpacing: '2px', marginBottom: '16px' }}>
-                                Your Listing Package
-                            </p>
-                            <h1 style={{ fontSize: '44px', fontWeight: 800, color: '#1A1816', lineHeight: '1.1', marginBottom: '12px' }}>
-                                Everything included.
-                            </h1>
-                            <p style={{ fontSize: '16px', color: '#6b7280', lineHeight: '26px', marginBottom: '36px' }}>
-                                Select each service to see what's inside your flat-fee package.
-                            </p>
+                    {/* Top Title */}
+                    <div style={{ marginBottom: '48px' }}>
+                        <p className="uppercase tracking-widest" style={{ fontSize: '12px', fontWeight: 700, color: '#9ca3af', letterSpacing: '2px', marginBottom: '16px' }}>
+                            Your Listing Package
+                        </p>
+                        <h1 style={{ fontSize: '44px', fontWeight: 800, color: '#1A1816', lineHeight: '1.1', marginBottom: '12px' }}>
+                            Everything included.
+                        </h1>
+                        <p style={{ fontSize: '16px', color: '#6b7280', lineHeight: '26px', maxWidth: '520px' }}>
+                            Select each service to see what's inside your flat-fee package.
+                        </p>
+                    </div>
 
-                            <div className="flex flex-col gap-2">
-                                {services.map((s, i) => (
-                                    <button
-                                        key={s.num}
-                                        onClick={() => setActiveService(i)}
-                                        className="flex items-center gap-4 rounded-xl px-5 transition-all"
-                                        style={{
-                                            height: '56px',
-                                            backgroundColor: activeService === i ? '#1A1816' : '#f5f5f4',
-                                            border: activeService === i ? '1.5px solid #1A1816' : '1.5px solid transparent',
-                                        }}
-                                    >
-                                        <span style={{ fontSize: '13px', fontWeight: 700, color: activeService === i ? '#6b7280' : '#d4d4d4', minWidth: '20px' }}>{s.num}</span>
-                                        <span style={{ fontSize: '14px', fontWeight: 600, color: activeService === i ? '#ffffff' : '#1A1816' }}>{s.title}</span>
-                                    </button>
-                                ))}
+                    {/* Dark Panel + Image Layout */}
+                    <div className="grid overflow-hidden rounded-2xl" style={{ gridTemplateColumns: '420px 1fr', minHeight: '560px', boxShadow: '0 8px 40px rgba(0,0,0,0.12)' }}>
+                        {/* Left: Dark service list */}
+                        <div style={{ backgroundColor: '#1A1816', padding: '8px' }}>
+                            <div className="flex flex-col gap-1">
+                                {services.map((s, i) => {
+                                    const isActive = activeService === i;
+                                    return (
+                                        <button
+                                            key={s.num}
+                                            onClick={() => setActiveService(i)}
+                                            className="flex items-center gap-4 rounded-xl px-5 text-left transition-all"
+                                            style={{
+                                                height: '56px',
+                                                backgroundColor: isActive ? 'rgba(255,255,255,0.1)' : 'transparent',
+                                            }}
+                                        >
+                                            <div className="flex items-center justify-center rounded-lg" style={{ width: '32px', height: '32px', backgroundColor: isActive ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.05)', flexShrink: 0 }}>
+                                                <span style={{ color: isActive ? '#ffffff' : '#6b7280' }}>{s.icon}</span>
+                                            </div>
+                                            <div className="flex flex-1 items-center justify-between">
+                                                <div className="flex items-center gap-3">
+                                                    <span style={{ fontSize: '12px', fontWeight: 700, color: isActive ? '#9ca3af' : '#4b5563', minWidth: '18px' }}>{s.num}</span>
+                                                    <span style={{ fontSize: '14px', fontWeight: isActive ? 600 : 500, color: isActive ? '#ffffff' : '#9ca3af' }}>{s.title}</span>
+                                                </div>
+                                                {isActive && (
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+                                                )}
+                                            </div>
+                                        </button>
+                                    );
+                                })}
+                            </div>
+
+                            {/* CTA inside dark panel */}
+                            <div style={{ padding: '16px 20px', marginTop: '8px' }}>
+                                <a href="#" className="flex w-full items-center justify-center rounded-xl text-white transition-opacity hover:opacity-90" style={{ backgroundColor: '#16a34a', height: '48px', fontSize: '14px', fontWeight: 600 }}>
+                                    Get Started Today
+                                </a>
                             </div>
                         </div>
 
-                        {/* Right: Active Service Detail */}
-                        <div className="sticky top-24">
-                            <div className="rounded-2xl border border-gray-200 bg-white" style={{ padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
-                                <div className="flex items-center justify-center rounded-2xl" style={{ width: '64px', height: '64px', backgroundColor: '#f5f5f4', marginBottom: '24px' }}>
-                                    {services[activeService].icon}
+                        {/* Right: Image + Description overlay */}
+                        <div className="relative">
+                            <img
+                                src={services[activeService].image}
+                                alt={services[activeService].title}
+                                className="h-full w-full object-cover"
+                            />
+                            {/* Bottom overlay with description */}
+                            <div className="absolute inset-x-0 bottom-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)', padding: '80px 32px 32px' }}>
+                                <div className="flex items-center gap-2" style={{ marginBottom: '8px' }}>
+                                    <span style={{ fontSize: '13px', fontWeight: 700, color: 'rgba(255,255,255,0.5)' }}>{services[activeService].num}</span>
+                                    <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff' }}>{services[activeService].title}</h2>
                                 </div>
-                                <div className="flex items-center gap-3" style={{ marginBottom: '16px' }}>
-                                    <span style={{ fontSize: '14px', fontWeight: 700, color: '#9ca3af' }}>{services[activeService].num}</span>
-                                    <h2 style={{ fontSize: '28px', fontWeight: 800, color: '#1A1816' }}>{services[activeService].title}</h2>
-                                </div>
-                                <p style={{ fontSize: '15px', color: '#6b7280', lineHeight: '26px', marginBottom: '32px' }}>
+                                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)', lineHeight: '22px', maxWidth: '560px' }}>
                                     {services[activeService].description}
                                 </p>
-                                <div className="flex items-center gap-3">
-                                    <a href="#" className="inline-flex items-center justify-center rounded-xl text-white transition-opacity hover:opacity-90" style={{ backgroundColor: '#1A1816', height: '48px', paddingLeft: '28px', paddingRight: '28px', fontSize: '14px', fontWeight: 600 }}>
-                                        Get Started
-                                    </a>
-                                    <a href="#" className="inline-flex items-center justify-center rounded-xl border border-gray-300 transition-colors hover:bg-gray-50" style={{ height: '48px', paddingLeft: '28px', paddingRight: '28px', fontSize: '14px', fontWeight: 600, color: '#1A1816' }}>
-                                        Schedule A Call
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -240,53 +267,69 @@ export default function ListingServices() {
 
             {/* ═══ Section 3: FAQ ═══ */}
             <section className="bg-white" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
-                <div className="mx-auto px-4" style={{ maxWidth: '800px' }}>
-                    <div className="text-center" style={{ marginBottom: '48px' }}>
-                        <p className="uppercase tracking-widest" style={{ fontSize: '12px', fontWeight: 700, color: '#9ca3af', letterSpacing: '2px', marginBottom: '16px' }}>
-                            FAQ
-                        </p>
-                        <h2 style={{ fontSize: '36px', fontWeight: 800, color: '#1A1816', lineHeight: '1.2' }}>
-                            Common Questions
-                        </h2>
-                    </div>
-
-                    <div className="flex flex-col">
-                        {faqs.map((faq, i) => (
-                            <div key={i} className="border-b border-gray-200">
-                                <button
-                                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                                    className="flex w-full items-center justify-between py-5 text-left transition-colors"
-                                >
-                                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1816', paddingRight: '16px', lineHeight: '22px' }}>{faq.q}</span>
-                                    <div className="flex shrink-0 items-center justify-center rounded-full" style={{ width: '28px', height: '28px', backgroundColor: openFaq === i ? '#1A1816' : '#f5f5f4', transition: 'all 0.2s' }}>
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={openFaq === i ? '#ffffff' : '#1A1816'} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                            {openFaq === i ? (
-                                                <line x1="5" y1="12" x2="19" y2="12" />
-                                            ) : (
-                                                <><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></>
-                                            )}
-                                        </svg>
-                                    </div>
-                                </button>
-                                {openFaq === i && (
-                                    <div style={{ paddingBottom: '20px' }}>
-                                        <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '24px' }}>{faq.a}</p>
-                                    </div>
-                                )}
+                <div className="mx-auto px-4" style={{ maxWidth: '1280px' }}>
+                    <div className="grid gap-16 lg:grid-cols-12">
+                        {/* Left: Title */}
+                        <div className="lg:col-span-4">
+                            <div className="sticky top-24">
+                                <p className="uppercase tracking-widest" style={{ fontSize: '12px', fontWeight: 700, color: '#9ca3af', letterSpacing: '2px', marginBottom: '16px' }}>
+                                    FAQ
+                                </p>
+                                <h2 style={{ fontSize: '36px', fontWeight: 800, color: '#1A1816', lineHeight: '1.2', marginBottom: '16px' }}>
+                                    Common Questions
+                                </h2>
+                                <p style={{ fontSize: '15px', color: '#6b7280', lineHeight: '24px' }}>
+                                    Everything you need to know about listing your home with EcoListing. Can't find what you're looking for?
+                                </p>
+                                <a href="#" className="mt-4 inline-flex items-center gap-2 transition-colors hover:opacity-80" style={{ fontSize: '14px', fontWeight: 600, color: '#1A1816' }}>
+                                    Contact our team
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                                </a>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Right: Accordion */}
+                        <div className="lg:col-span-8">
+                            <div className="flex flex-col">
+                                {faqs.map((faq, i) => (
+                                    <div key={i} className="border-b border-gray-200">
+                                        <button
+                                            onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                            className="flex w-full items-center justify-between py-5 text-left transition-colors"
+                                        >
+                                            <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1816', paddingRight: '16px', lineHeight: '22px' }}>{faq.q}</span>
+                                            <div className="flex shrink-0 items-center justify-center rounded-full" style={{ width: '28px', height: '28px', backgroundColor: openFaq === i ? '#1A1816' : '#f5f5f4', transition: 'all 0.2s' }}>
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={openFaq === i ? '#ffffff' : '#1A1816'} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                                    {openFaq === i ? (
+                                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                                    ) : (
+                                                        <><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></>
+                                                    )}
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        {openFaq === i && (
+                                            <div style={{ paddingBottom: '20px' }}>
+                                                <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '24px' }}>{faq.a}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ═══ Section 4: CMA CTA ═══ */}
+            {/* ═══ Section 4: Discover CMA ═══ */}
             <section style={{ backgroundColor: '#fafaf9', paddingTop: '80px', paddingBottom: '80px' }}>
                 <div className="mx-auto px-4" style={{ maxWidth: '1280px' }}>
                     <div className="grid items-center gap-16 lg:grid-cols-2">
                         {/* Left: Content */}
                         <div>
-                            <h2 style={{ fontSize: '36px', fontWeight: 800, color: '#1A1816', lineHeight: '1.15' }}>
-                                Discover Your Home's True Market Value
+                            <h2 style={{ fontSize: '40px', fontWeight: 800, color: '#1A1816', lineHeight: '1.15' }}>
+                                Discover Your Home's{' '}
+                                <span style={{ color: '#16a34a' }}>True Market Value</span>
                             </h2>
                             <p className="mt-4" style={{ fontSize: '16px', lineHeight: '26px', color: '#6b7280' }}>
                                 Get an accurate estimate by expert agent using latest market data and comparable sales.
@@ -295,14 +338,20 @@ export default function ListingServices() {
 
                             {/* CMA Input */}
                             <div className="mt-8 flex items-center overflow-hidden rounded-full border border-gray-300 bg-white" style={{ maxWidth: '480px', height: '52px' }}>
-                                <input type="text" placeholder="Enter property address" className="h-full flex-1 border-0 bg-transparent pl-5 pr-2 focus:outline-none focus:ring-0" style={{ fontSize: '14px', color: '#1A1816' }} />
-                                <button className="mr-1 flex items-center justify-center gap-2 rounded-full text-white transition-colors hover:bg-gray-800" style={{ width: '200px', height: '44px', backgroundColor: '#1A1816', fontSize: '13px', fontWeight: 600 }}>
+                                <div className="flex items-center justify-center" style={{ width: '48px', flexShrink: 0 }}>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                        <polyline points="9 22 9 12 15 12 15 22" />
+                                    </svg>
+                                </div>
+                                <input type="text" placeholder="Enter property address" className="h-full flex-1 border-0 bg-transparent pr-2 focus:outline-none focus:ring-0" style={{ fontSize: '14px', color: '#1A1816' }} />
+                                <button className="mr-1 flex items-center justify-center gap-2 rounded-full text-white transition-colors hover:bg-gray-800" style={{ width: '200px', height: '44px', backgroundColor: '#1A1816', fontSize: '13px', fontWeight: 600, flexShrink: 0 }}>
                                     Get Agent CMA Report
                                 </button>
                             </div>
 
                             {/* Trust Badges */}
-                            <div className="mt-6 flex items-center gap-6">
+                            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
                                 {['Licensed REALTOR\u00AE', '100% Free Market Analysis', 'No sign-up required', 'Detailed CMA Reports'].map((text) => (
                                     <div key={text} className="flex items-center gap-1.5">
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
@@ -312,45 +361,15 @@ export default function ListingServices() {
                             </div>
                         </div>
 
-                        {/* Right: Decorative Cards */}
-                        <div className="relative" style={{ height: '380px' }}>
-                            <div className="rounded-2xl border border-gray-200 bg-white" style={{ position: 'absolute', top: '30px', right: '0px', width: '320px', transform: 'rotate(2deg)', zIndex: 5, boxShadow: '0 4px 20px rgba(0,0,0,0.08)', padding: '24px' }}>
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="flex items-center justify-center rounded-xl" style={{ width: '44px', height: '44px', backgroundColor: '#dcfce7' }}>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
-                                    </div>
-                                    <div>
-                                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#1A1816' }}>Market Analysis</div>
-                                        <div style={{ fontSize: '12px', color: '#6b7280' }}>Based on 24 comparable sales</div>
-                                    </div>
-                                </div>
-                                <div style={{ fontSize: '32px', fontWeight: 800, color: '#1A1816' }}>$1,250,000</div>
-                                <div style={{ fontSize: '13px', color: '#16a34a', fontWeight: 600, marginTop: '4px' }}>+3.2% vs last quarter</div>
-                                <div className="mt-4 h-2 overflow-hidden rounded-full bg-gray-100">
-                                    <div className="h-full rounded-full" style={{ width: '78%', background: 'linear-gradient(90deg, #16a34a, #22c55e)' }} />
-                                </div>
-                                <div className="mt-2 flex justify-between" style={{ fontSize: '11px', color: '#9ca3af' }}>
-                                    <span>$1.1M</span><span>$1.4M</span>
-                                </div>
-                            </div>
-                            <div className="rounded-2xl border border-gray-200 bg-white" style={{ position: 'absolute', top: '10px', left: '20px', width: '280px', transform: 'rotate(-3deg)', zIndex: 10, boxShadow: '0 8px 30px rgba(0,0,0,0.12)', padding: '24px' }}>
-                                <div style={{ fontSize: '11px', fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: '12px' }}>CMA Report</div>
-                                <div style={{ fontSize: '14px', fontWeight: 600, color: '#1A1816', marginBottom: '4px' }}>4508 W 12th Avenue</div>
-                                <div style={{ fontSize: '12px', color: '#6b7280', marginBottom: '16px' }}>Vancouver, BC V6R 2R3</div>
-                                <div className="flex gap-6">
-                                    <div>
-                                        <div style={{ fontSize: '11px', color: '#9ca3af' }}>Beds</div>
-                                        <div style={{ fontSize: '16px', fontWeight: 700, color: '#1A1816' }}>4</div>
-                                    </div>
-                                    <div>
-                                        <div style={{ fontSize: '11px', color: '#9ca3af' }}>Baths</div>
-                                        <div style={{ fontSize: '16px', fontWeight: 700, color: '#1A1816' }}>3</div>
-                                    </div>
-                                    <div>
-                                        <div style={{ fontSize: '11px', color: '#9ca3af' }}>Sqft</div>
-                                        <div style={{ fontSize: '16px', fontWeight: 700, color: '#1A1816' }}>2,400</div>
-                                    </div>
-                                </div>
+                        {/* Right: Discover Image */}
+                        <div className="flex justify-center">
+                            <div className="overflow-hidden rounded-2xl" style={{ boxShadow: '0 8px 40px rgba(0,0,0,0.12)' }}>
+                                <img
+                                    src="/images/discover-img.png"
+                                    alt="Discover your home's true market value"
+                                    className="h-auto w-full object-cover"
+                                    style={{ maxHeight: '420px' }}
+                                />
                             </div>
                         </div>
                     </div>
