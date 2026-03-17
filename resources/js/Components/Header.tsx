@@ -85,7 +85,7 @@ export default function Header() {
                             </button>
 
                             {dropdownOpen && (
-                                <div className="absolute left-0 top-full z-50 mt-0 overflow-hidden rounded-2xl border border-gray-200 bg-white py-2" style={{ width: '280px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
+                                <div className="absolute left-0 top-full mt-0 overflow-hidden rounded-2xl border border-gray-200 bg-white py-2" style={{ width: '280px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)', zIndex: 9999 }}>
                                     <Link
                                         href="/listing-services"
                                         onClick={() => setDropdownOpen(false)}
