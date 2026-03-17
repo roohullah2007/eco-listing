@@ -556,6 +556,7 @@ export default function MapSearch({ listings = [], pagination, filters = {} }: P
     const [minLot, setMinLot] = useState(filters.minLotSize || '');
     const [maxLot, setMaxLot] = useState(filters.maxLotSize || '');
     const [panelPage, setPanelPage] = useState(1);
+    const [viewMode, setViewMode] = useState<'map' | 'list'>('map');
     const PANEL_PAGE_SIZE = 20;
 
     // Autocomplete state
@@ -999,6 +1000,46 @@ export default function MapSearch({ listings = [], pagination, filters = {} }: P
 
                         <div className="flex-1" />
 
+                        {/* View Mode Toggle */}
+                        <div className="flex items-center overflow-hidden rounded-lg border border-gray-300" style={{ height: '36px' }}>
+                            <button
+                                onClick={() => setViewMode('map')}
+                                className="flex items-center gap-1.5 px-3 transition-colors"
+                                style={{
+                                    height: '100%',
+                                    fontSize: '12px',
+                                    fontWeight: 600,
+                                    backgroundColor: viewMode === 'map' ? '#1A1816' : 'white',
+                                    color: viewMode === 'map' ? 'white' : '#6b7280',
+                                    whiteSpace: 'nowrap',
+                                }}
+                            >
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+                                    <line x1="8" y1="2" x2="8" y2="18" /><line x1="16" y1="6" x2="16" y2="22" />
+                                </svg>
+                                Map
+                            </button>
+                            <button
+                                onClick={() => setViewMode('list')}
+                                className="flex items-center gap-1.5 border-l border-gray-300 px-3 transition-colors"
+                                style={{
+                                    height: '100%',
+                                    fontSize: '12px',
+                                    fontWeight: 600,
+                                    backgroundColor: viewMode === 'list' ? '#1A1816' : 'white',
+                                    color: viewMode === 'list' ? 'white' : '#6b7280',
+                                    whiteSpace: 'nowrap',
+                                }}
+                            >
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" />
+                                    <rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
+                                </svg>
+                                List
+                            </button>
+                        </div>
+
                         {/* Save Search */}
                         <button
                             className="flex items-center gap-2 rounded-xl px-5 py-2 text-sm text-white transition-opacity hover:opacity-90"
@@ -1016,12 +1057,14 @@ export default function MapSearch({ listings = [], pagination, filters = {} }: P
                 {/* Main Content: Map + Listings */}
                 <div className="flex min-h-0 flex-1">
                     {/* Map */}
-                    <div className="hidden lg:block" style={{ width: '57%' }}>
-                        <ListingsMap listings={listings} onPolygonSearch={handlePolygonSearch} onPolygonReset={handlePolygonReset} onBoundsChange={handleBoundsChange} hasPolygonFilter={!!filters.polygon} />
-                    </div>
+                    {viewMode === 'map' && (
+                        <div className="hidden lg:block" style={{ width: '57%' }}>
+                            <ListingsMap listings={listings} onPolygonSearch={handlePolygonSearch} onPolygonReset={handlePolygonReset} onBoundsChange={handleBoundsChange} hasPolygonFilter={!!filters.polygon} />
+                        </div>
+                    )}
 
                     {/* Listings Panel */}
-                    <div className="flex min-h-0 flex-1 flex-col border-l border-gray-200 bg-white lg:max-w-[43%]">
+                    <div className={`flex min-h-0 flex-1 flex-col border-l border-gray-200 bg-white ${viewMode === 'map' ? 'lg:max-w-[43%]' : ''}`}>
                         {/* Panel Header */}
                         <div className="shrink-0 border-b border-gray-100 px-5 pt-4 pb-3">
                             <div className="flex items-center justify-between">
@@ -1063,7 +1106,7 @@ export default function MapSearch({ listings = [], pagination, filters = {} }: P
                         {/* Listings grid */}
                         <div className="flex-1 overflow-y-auto px-5 py-4">
                             {listings.length > 0 ? (
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className={`grid gap-4 ${viewMode === 'list' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' : 'grid-cols-2'}`}>
                                     {listings.slice((panelPage - 1) * PANEL_PAGE_SIZE, panelPage * PANEL_PAGE_SIZE).map((listing) => (
                                         <ListingCard key={listing.mlsNumber} listing={listing} />
                                     ))}
