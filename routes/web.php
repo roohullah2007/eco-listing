@@ -204,13 +204,13 @@ Route::get('/property/{mlsNumber}', function (string $mlsNumber, RepliersService
     ]);
 })->name('property.details');
 
-// Route::get('/research', function () {
-//     return Inertia::render('Research');
-// })->name('research');
+Route::get('/research', function () {
+    return Inertia::render('Research');
+})->name('research');
 
-// Route::get('/cma', function () {
-//     return Inertia::render('Cma');
-// })->name('cma');
+Route::get('/cma', function () {
+    return Inertia::render('Cma');
+})->name('cma');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

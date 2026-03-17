@@ -3,8 +3,8 @@ import { PageProps } from '@/types';
 
 const navLinks = [
     { label: 'Map Search', href: '/map-search' },
-    { label: 'Research', href: '#' },
-    { label: 'CMA', href: '#' },
+    { label: 'Research', href: '/research' },
+    { label: 'CMA', href: '/cma' },
     { label: 'Market Analysis', href: '#' },
     { label: 'Listing Services', href: '#' },
 ];
