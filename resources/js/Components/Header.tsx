@@ -1,6 +1,44 @@
-import { Link, usePage } from '@inertiajs/react';
+import { Link, usePage, router } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import { useState, useRef, useEffect } from 'react';
+
+// Global loading bar component
+function useNavigationLoading() {
+    const [loading, setLoading] = useState(false);
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        let interval: ReturnType<typeof setInterval>;
+
+        const startHandler = () => {
+            setLoading(true);
+            setProgress(20);
+            interval = setInterval(() => {
+                setProgress((prev) => {
+                    if (prev >= 90) { clearInterval(interval); return 90; }
+                    return prev + Math.random() * 15;
+                });
+            }, 200);
+        };
+
+        const finishHandler = () => {
+            clearInterval(interval);
+            setProgress(100);
+            setTimeout(() => { setLoading(false); setProgress(0); }, 300);
+        };
+
+        router.on('start', startHandler);
+        router.on('finish', finishHandler);
+
+        return () => {
+            router.on('start', () => {});
+            router.on('finish', () => {});
+            clearInterval(interval);
+        };
+    }, []);
+
+    return { loading, progress };
+}
 
 const navLinks = [
     { label: 'Map Search', href: '/map-search' },
@@ -14,6 +52,7 @@ export default function Header() {
     const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const { loading, progress } = useNavigationLoading();
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
@@ -32,6 +71,12 @@ export default function Header() {
             className="relative w-full shrink-0 border-b border-gray-200 bg-white"
             style={{ height: '50px', zIndex: 10000 }}
         >
+            {/* Loading progress bar */}
+            {loading && (
+                <div className="absolute bottom-0 left-0 right-0" style={{ height: '2px', zIndex: 10001 }}>
+                    <div style={{ height: '100%', width: `${progress}%`, backgroundColor: '#1A1816', transition: 'width 0.2s ease' }} />
+                </div>
+            )}
             <div className="mx-auto flex h-full items-center justify-between transition-all duration-500 ease-in-out" style={{ maxWidth: currentPath === '/map-search' ? '1408px' : '1280px' }}>
                 {/* Left: Logo + Nav Links */}
                 <div className="flex h-full items-center">
@@ -53,6 +98,7 @@ export default function Header() {
                                 <Link
                                     key={item.label}
                                     href={item.href}
+                                    prefetch
                                     className="flex h-full items-center px-3 transition-colors hover:text-green-600"
                                     style={{
                                         fontSize: '14px',
@@ -88,6 +134,7 @@ export default function Header() {
                                 <div className="absolute left-0 top-full mt-0 overflow-hidden rounded-2xl border border-gray-200 bg-white py-2" style={{ width: '280px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)', zIndex: 9999 }}>
                                     <Link
                                         href="/listing-services"
+                                        prefetch
                                         onClick={() => setDropdownOpen(false)}
                                         className="flex items-center gap-3 px-5 py-3 transition-colors hover:bg-gray-50"
                                     >
@@ -104,6 +151,7 @@ export default function Header() {
                                     </Link>
                                     <Link
                                         href="/listing-services#how-we-sell"
+                                        prefetch
                                         onClick={() => setDropdownOpen(false)}
                                         className="flex items-center gap-3 px-5 py-3 transition-colors hover:bg-gray-50"
                                     >

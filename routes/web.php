@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Services\RepliersService;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -12,25 +13,25 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/v2', function (RepliersService $repliers) {
-    $featuredListings = [];
-    try {
-        // Fetch from different price brackets for variety (200k-400k, 400k-600k, 600k-999k)
-        $ranges = [
-            ['minPrice' => 200000, 'maxPrice' => 399999],
-            ['minPrice' => 400000, 'maxPrice' => 599999],
-            ['minPrice' => 600000, 'maxPrice' => 999999],
-        ];
-        foreach ($ranges as $range) {
-            $result = $repliers->searchListings(array_merge($range, [
-                'resultsPerPage' => 2,
-                'sortBy' => 'updatedOnDesc',
-            ]));
-            $listings = $result['listings'] ?? [];
-            $featuredListings = array_merge($featuredListings, $listings);
-        }
-        // Shuffle so the price order feels natural, not ascending
-        shuffle($featuredListings);
-    } catch (\Exception $e) {}
+    $featuredListings = Cache::remember('featured_listings_v2', 300, function () use ($repliers) {
+        $listings = [];
+        try {
+            $ranges = [
+                ['minPrice' => 200000, 'maxPrice' => 399999],
+                ['minPrice' => 400000, 'maxPrice' => 599999],
+                ['minPrice' => 600000, 'maxPrice' => 999999],
+            ];
+            foreach ($ranges as $range) {
+                $result = $repliers->searchListings(array_merge($range, [
+                    'resultsPerPage' => 2,
+                    'sortBy' => 'updatedOnDesc',
+                ]));
+                $listings = array_merge($listings, $result['listings'] ?? []);
+            }
+            shuffle($listings);
+        } catch (\Exception $e) {}
+        return $listings;
+    });
 
     return Inertia::render('WelcomeV2', [
         'featuredListings' => $featuredListings,
@@ -38,23 +39,25 @@ Route::get('/v2', function (RepliersService $repliers) {
 })->name('home-v2');
 
 Route::get('/v3', function (RepliersService $repliers) {
-    $featuredListings = [];
-    try {
-        $ranges = [
-            ['minPrice' => 200000, 'maxPrice' => 399999],
-            ['minPrice' => 400000, 'maxPrice' => 599999],
-            ['minPrice' => 600000, 'maxPrice' => 999999],
-        ];
-        foreach ($ranges as $range) {
-            $result = $repliers->searchListings(array_merge($range, [
-                'resultsPerPage' => 2,
-                'sortBy' => 'updatedOnDesc',
-            ]));
-            $listings = $result['listings'] ?? [];
-            $featuredListings = array_merge($featuredListings, $listings);
-        }
-        shuffle($featuredListings);
-    } catch (\Exception $e) {}
+    $featuredListings = Cache::remember('featured_listings_v3', 300, function () use ($repliers) {
+        $listings = [];
+        try {
+            $ranges = [
+                ['minPrice' => 200000, 'maxPrice' => 399999],
+                ['minPrice' => 400000, 'maxPrice' => 599999],
+                ['minPrice' => 600000, 'maxPrice' => 999999],
+            ];
+            foreach ($ranges as $range) {
+                $result = $repliers->searchListings(array_merge($range, [
+                    'resultsPerPage' => 2,
+                    'sortBy' => 'updatedOnDesc',
+                ]));
+                $listings = array_merge($listings, $result['listings'] ?? []);
+            }
+            shuffle($listings);
+        } catch (\Exception $e) {}
+        return $listings;
+    });
 
     return Inertia::render('WelcomeV3', [
         'featuredListings' => $featuredListings,
@@ -214,48 +217,51 @@ Route::get('/cma', function () {
 
 Route::get('/market-analysis', function (Request $request, RepliersService $repliers) {
     $city = $request->query('city', 'Vancouver');
-    $activeListings = [];
-    $soldListings = [];
-    $stats = ['activeCount' => 0, 'soldCount' => 0, 'avgPrice' => 0, 'avgDom' => 0];
+    $cacheKey = 'market_analysis_' . md5($city);
 
-    try {
-        // Fetch active listings for this city
-        $activeResult = $repliers->searchListings([
-            'city' => $city,
-            'status' => 'A',
-            'type' => 'sale',
-            'resultsPerPage' => 8,
-            'sortBy' => 'updatedOnDesc',
-        ]);
-        $activeListings = $activeResult['listings'] ?? [];
-        $stats['activeCount'] = $activeResult['count'] ?? count($activeListings);
+    $data = Cache::remember($cacheKey, 300, function () use ($city, $repliers) {
+        $activeListings = [];
+        $soldListings = [];
+        $stats = ['activeCount' => 0, 'soldCount' => 0, 'avgPrice' => 0, 'avgDom' => 0];
 
-        // Calculate average price and DOM from active listings
-        if (!empty($activeListings)) {
-            $prices = array_map(fn($l) => (int) ($l['listPrice'] ?? 0), $activeListings);
-            $doms = array_map(fn($l) => (int) ($l['daysOnMarket'] ?? 0), $activeListings);
-            $stats['avgPrice'] = round(array_sum($prices) / count($prices));
-            $stats['avgDom'] = round(array_sum($doms) / count($doms));
-        }
-    } catch (\Exception $e) {}
+        try {
+            $activeResult = $repliers->searchListings([
+                'city' => $city,
+                'status' => 'A',
+                'type' => 'sale',
+                'resultsPerPage' => 8,
+                'sortBy' => 'updatedOnDesc',
+            ]);
+            $activeListings = $activeResult['listings'] ?? [];
+            $stats['activeCount'] = $activeResult['count'] ?? count($activeListings);
 
-    try {
-        // Fetch sold listings for this city
-        $soldResult = $repliers->searchListings([
-            'city' => $city,
-            'status' => 'U',
-            'type' => 'sale',
-            'resultsPerPage' => 8,
-            'sortBy' => 'updatedOnDesc',
-        ]);
-        $soldListings = $soldResult['listings'] ?? [];
-        $stats['soldCount'] = $soldResult['count'] ?? count($soldListings);
-    } catch (\Exception $e) {}
+            if (!empty($activeListings)) {
+                $prices = array_map(fn($l) => (int) ($l['listPrice'] ?? 0), $activeListings);
+                $doms = array_map(fn($l) => (int) ($l['daysOnMarket'] ?? 0), $activeListings);
+                $stats['avgPrice'] = round(array_sum($prices) / count($prices));
+                $stats['avgDom'] = round(array_sum($doms) / count($doms));
+            }
+        } catch (\Exception $e) {}
+
+        try {
+            $soldResult = $repliers->searchListings([
+                'city' => $city,
+                'status' => 'U',
+                'type' => 'sale',
+                'resultsPerPage' => 8,
+                'sortBy' => 'updatedOnDesc',
+            ]);
+            $soldListings = $soldResult['listings'] ?? [];
+            $stats['soldCount'] = $soldResult['count'] ?? count($soldListings);
+        } catch (\Exception $e) {}
+
+        return compact('activeListings', 'soldListings', 'stats');
+    });
 
     return Inertia::render('MarketAnalysis', [
-        'activeListings' => $activeListings,
-        'soldListings' => $soldListings,
-        'stats' => $stats,
+        'activeListings' => $data['activeListings'],
+        'soldListings' => $data['soldListings'],
+        'stats' => $data['stats'],
         'selectedCity' => $city,
     ]);
 })->name('market-analysis');
