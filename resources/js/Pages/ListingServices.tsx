@@ -267,56 +267,41 @@ export default function ListingServices() {
 
             {/* ═══ Section 3: FAQ ═══ */}
             <section className="bg-white" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
-                <div className="mx-auto px-4" style={{ maxWidth: '1280px' }}>
-                    <div className="grid gap-16 lg:grid-cols-12">
-                        {/* Left: Title */}
-                        <div className="lg:col-span-4">
-                            <div className="sticky top-24">
-                                <p className="uppercase tracking-widest" style={{ fontSize: '12px', fontWeight: 700, color: '#9ca3af', letterSpacing: '2px', marginBottom: '16px' }}>
-                                    FAQ
-                                </p>
-                                <h2 style={{ fontSize: '36px', fontWeight: 800, color: '#1A1816', lineHeight: '1.2', marginBottom: '16px' }}>
-                                    Common Questions
-                                </h2>
-                                <p style={{ fontSize: '15px', color: '#6b7280', lineHeight: '24px' }}>
-                                    Everything you need to know about listing your home with EcoListing. Can't find what you're looking for?
-                                </p>
-                                <a href="#" className="mt-4 inline-flex items-center gap-2 transition-colors hover:opacity-80" style={{ fontSize: '14px', fontWeight: 600, color: '#1A1816' }}>
-                                    Contact our team
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-                                </a>
-                            </div>
-                        </div>
+                <div className="mx-auto px-4" style={{ maxWidth: '800px' }}>
+                    <div className="text-center" style={{ marginBottom: '48px' }}>
+                        <p className="uppercase tracking-widest" style={{ fontSize: '12px', fontWeight: 700, color: '#9ca3af', letterSpacing: '2px', marginBottom: '16px' }}>
+                            FAQ
+                        </p>
+                        <h2 style={{ fontSize: '36px', fontWeight: 800, color: '#1A1816', lineHeight: '1.2' }}>
+                            Common Questions
+                        </h2>
+                    </div>
 
-                        {/* Right: Accordion */}
-                        <div className="lg:col-span-8">
-                            <div className="flex flex-col">
-                                {faqs.map((faq, i) => (
-                                    <div key={i} className="border-b border-gray-200">
-                                        <button
-                                            onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                                            className="flex w-full items-center justify-between py-5 text-left transition-colors"
-                                        >
-                                            <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1816', paddingRight: '16px', lineHeight: '22px' }}>{faq.q}</span>
-                                            <div className="flex shrink-0 items-center justify-center rounded-full" style={{ width: '28px', height: '28px', backgroundColor: openFaq === i ? '#1A1816' : '#f5f5f4', transition: 'all 0.2s' }}>
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={openFaq === i ? '#ffffff' : '#1A1816'} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                                    {openFaq === i ? (
-                                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                                    ) : (
-                                                        <><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></>
-                                                    )}
-                                                </svg>
-                                            </div>
-                                        </button>
-                                        {openFaq === i && (
-                                            <div style={{ paddingBottom: '20px' }}>
-                                                <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '24px' }}>{faq.a}</p>
-                                            </div>
-                                        )}
+                    <div className="flex flex-col">
+                        {faqs.map((faq, i) => (
+                            <div key={i} className="border-b border-gray-200">
+                                <button
+                                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                    className="flex w-full items-center justify-between py-5 text-left transition-colors"
+                                >
+                                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1816', paddingRight: '16px', lineHeight: '22px' }}>{faq.q}</span>
+                                    <div className="flex shrink-0 items-center justify-center rounded-full" style={{ width: '28px', height: '28px', backgroundColor: openFaq === i ? '#1A1816' : '#f5f5f4', transition: 'all 0.2s' }}>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={openFaq === i ? '#ffffff' : '#1A1816'} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                            {openFaq === i ? (
+                                                <line x1="5" y1="12" x2="19" y2="12" />
+                                            ) : (
+                                                <><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></>
+                                            )}
+                                        </svg>
                                     </div>
-                                ))}
+                                </button>
+                                {openFaq === i && (
+                                    <div style={{ paddingBottom: '20px' }}>
+                                        <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '24px' }}>{faq.a}</p>
+                                    </div>
+                                )}
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
