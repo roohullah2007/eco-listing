@@ -53,7 +53,7 @@ export default function TermsOfService() {
 
             {/* Hero */}
             <section className="bg-white py-20">
-                <div className="mx-auto max-w-[800px] px-6 text-center">
+                <div className="mx-auto max-w-[1280px] px-6 text-center">
                     <span
                         className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest"
                         style={{ color: '#9ca3af' }}
@@ -79,7 +79,7 @@ export default function TermsOfService() {
 
             {/* Content */}
             <section className="bg-white pb-20">
-                <div className="mx-auto max-w-[800px] px-6">
+                <div className="mx-auto max-w-[1280px] px-6">
                     {sections.map((section, index) => (
                         <div
                             key={section.title}

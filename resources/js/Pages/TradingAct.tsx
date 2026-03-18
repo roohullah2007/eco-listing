@@ -43,7 +43,7 @@ export default function TradingAct() {
 
             {/* Hero */}
             <section className="bg-white py-20">
-                <div className="mx-auto" style={{ maxWidth: 800, padding: '0 24px' }}>
+                <div className="mx-auto" style={{ maxWidth: '1280px', padding: '0 24px' }}>
                     <div className="text-center">
                         <span
                             className="inline-block tracking-widest uppercase mb-4"
@@ -72,7 +72,7 @@ export default function TradingAct() {
 
             {/* Content */}
             <section className="bg-white pb-20">
-                <div className="mx-auto" style={{ maxWidth: 800, padding: '0 24px' }}>
+                <div className="mx-auto" style={{ maxWidth: '1280px', padding: '0 24px' }}>
                     {sections.map((section, index) => (
                         <div
                             key={section.title}
@@ -99,7 +99,7 @@ export default function TradingAct() {
 
             {/* Contact CTA */}
             <section style={{ backgroundColor: '#fafaf9' }} className="py-20">
-                <div className="mx-auto text-center" style={{ maxWidth: 800, padding: '0 24px' }}>
+                <div className="mx-auto text-center" style={{ maxWidth: '1280px', padding: '0 24px' }}>
                     <h2
                         style={{
                             fontSize: 28,
