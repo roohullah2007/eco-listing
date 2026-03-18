@@ -75,7 +75,7 @@ function HeroSection({ featuredListings = [] }: { featuredListings?: FeaturedLis
         <section className="relative w-full overflow-hidden">
             {/* Background Video / Image */}
             <img
-                src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1920"
                 alt="British Columbia real estate"
                 className="absolute inset-0 h-full w-full object-cover"
             />
