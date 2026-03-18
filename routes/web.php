@@ -278,6 +278,10 @@ Route::get('/toolkit', function () {
     return Inertia::render('Toolkit');
 })->name('toolkit');
 
+Route::get('/value-estimate', function () {
+    return Inertia::render('ValueEstimate');
+})->name('value-estimate');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

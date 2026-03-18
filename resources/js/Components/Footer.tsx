@@ -57,7 +57,7 @@ export default function Footer() {
                             <h4 style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#ffffff' }}>SOLUTIONS</h4>
                             <ul className="mt-5 flex flex-col gap-4">
                                 {[
-                                    { label: 'Value Estimate', href: '/cma' },
+                                    { label: 'Value Estimate', href: '/value-estimate' },
                                     { label: 'Map Search', href: '/map-search' },
                                     { label: 'Market Analysis', href: '/market-analysis' },
                                     { label: 'CMA Report', href: '/cma' },
