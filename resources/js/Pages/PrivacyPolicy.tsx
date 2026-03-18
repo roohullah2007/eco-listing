@@ -124,7 +124,7 @@ export default function PrivacyPolicy() {
 
             {/* Hero */}
             <section className="bg-white py-20">
-                <div className="mx-auto text-center" style={{ maxWidth: '1280px' }}>
+                <div className="mx-auto px-6" style={{ maxWidth: '1280px' }}>
                     <p className="uppercase tracking-widest mb-4" style={{ fontSize: 13, fontWeight: 600, color: '#9ca3af' }}>
                         LEGAL
                     </p>

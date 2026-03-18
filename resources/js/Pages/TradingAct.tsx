@@ -44,7 +44,7 @@ export default function TradingAct() {
             {/* Hero */}
             <section className="bg-white py-20">
                 <div className="mx-auto" style={{ maxWidth: '1280px', padding: '0 24px' }}>
-                    <div className="text-center">
+                    <div>
                         <span
                             className="inline-block tracking-widest uppercase mb-4"
                             style={{ fontSize: 13, fontWeight: 600, color: '#9ca3af', letterSpacing: '0.1em' }}

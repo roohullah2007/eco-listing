@@ -71,7 +71,7 @@ export default function FaqCenter() {
 
             {/* ═══ Category Filter ═══ */}
             <section className="bg-white" style={{ paddingBottom: '48px' }}>
-                <div className="mx-auto flex flex-wrap justify-center gap-3 px-4" style={{ maxWidth: '900px' }}>
+                <div className="mx-auto flex flex-wrap justify-center gap-3 px-4" style={{ maxWidth: '1280px' }}>
                     {categories.map((cat) => (
                         <button
                             key={cat}
@@ -95,7 +95,7 @@ export default function FaqCenter() {
 
             {/* ═══ FAQ Accordion ═══ */}
             <section className="bg-white" style={{ paddingBottom: '80px' }}>
-                <div className="mx-auto px-4" style={{ maxWidth: '900px' }}>
+                <div className="mx-auto px-4" style={{ maxWidth: '1280px' }}>
                     {filteredCategories.map((category) => (
                         <div key={category} style={{ marginBottom: '40px' }}>
                             {activeCategory === 'All' && (
