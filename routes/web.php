@@ -298,6 +298,22 @@ Route::get('/faq', function () {
     return Inertia::render('FaqCenter');
 })->name('faq');
 
+Route::get('/trading-act', function () {
+    return Inertia::render('TradingAct');
+})->name('trading-act');
+
+Route::get('/terms', function () {
+    return Inertia::render('TermsOfService');
+})->name('terms');
+
+Route::get('/privacy', function () {
+    return Inertia::render('PrivacyPolicy');
+})->name('privacy');
+
+Route::get('/sitemap', function () {
+    return Inertia::render('Sitemap');
+})->name('sitemap');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

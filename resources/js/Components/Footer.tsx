@@ -94,10 +94,15 @@ export default function Footer() {
                         <div>
                             <h4 style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#ffffff' }}>COMPLIANCE</h4>
                             <ul className="mt-5 flex flex-col gap-4">
-                                {['Trading Act', 'Privacy Policy', 'Terms of Service', 'Full Sitemap'].map((item) => (
-                                    <li key={item}>
-                                        <a href="#" className="transition-colors hover:text-white" style={{ fontSize: '15px', color: '#94a3b8' }}>
-                                            {item}
+                                {[
+                                    { label: 'Trading Act', href: '/trading-act' },
+                                    { label: 'Privacy Policy', href: '/privacy' },
+                                    { label: 'Terms of Service', href: '/terms' },
+                                    { label: 'Full Sitemap', href: '/sitemap' },
+                                ].map((item) => (
+                                    <li key={item.label}>
+                                        <a href={item.href} className="transition-colors hover:text-white" style={{ fontSize: '15px', color: '#94a3b8' }}>
+                                            {item.label}
                                         </a>
                                     </li>
                                 ))}
