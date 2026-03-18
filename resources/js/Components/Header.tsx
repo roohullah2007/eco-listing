@@ -174,20 +174,20 @@ export default function Header() {
 
                 {/* Right: Toolkit + Phone + Login */}
                 <div className="flex h-full items-center gap-3">
-                    {/* Toolkit dropdown */}
-                    <a
-                        href="#"
-                        className="flex h-full items-center gap-1 px-3 transition-colors hover:text-green-600"
+                    {/* Toolkit link */}
+                    <Link
+                        href="/toolkit"
+                        prefetch
+                        className="flex h-full items-center gap-1 px-3 transition-colors hover:text-gray-600"
                         style={{
                             fontSize: '14px',
-                            fontWeight: 500,
+                            fontWeight: currentPath === '/toolkit' ? 600 : 500,
                             color: 'rgb(26, 24, 22)',
                             lineHeight: '50px',
                         }}
                     >
                         Toolkit
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
-                    </a>
+                    </Link>
 
                     {/* Phone icon */}
                     <a href="tel:" className="flex items-center justify-center rounded-full transition-colors hover:bg-gray-100" style={{ width: '36px', height: '36px' }}>

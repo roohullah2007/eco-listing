@@ -274,6 +274,10 @@ Route::get('/how-we-sell', function () {
     return Inertia::render('HowWeSell');
 })->name('how-we-sell');
 
+Route::get('/toolkit', function () {
+    return Inertia::render('Toolkit');
+})->name('toolkit');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

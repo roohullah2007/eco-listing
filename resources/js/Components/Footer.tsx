@@ -36,10 +36,16 @@ export default function Footer() {
                         <div>
                             <h4 style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#ffffff' }}>CORE</h4>
                             <ul className="mt-5 flex flex-col gap-4">
-                                {['Home', 'About Us', 'How We Sell', 'Services', 'Toolkit', 'Research'].map((item) => (
-                                    <li key={item}>
-                                        <a href="#" className="transition-colors hover:text-white" style={{ fontSize: '15px', color: '#94a3b8' }}>
-                                            {item}
+                                {[
+                                    { label: 'Home', href: '/' },
+                                    { label: 'How We Sell', href: '/how-we-sell' },
+                                    { label: 'Services', href: '/listing-services' },
+                                    { label: 'Toolkit', href: '/toolkit' },
+                                    { label: 'Research', href: '/research' },
+                                ].map((item) => (
+                                    <li key={item.label}>
+                                        <a href={item.href} className="transition-colors hover:text-white" style={{ fontSize: '15px', color: '#94a3b8' }}>
+                                            {item.label}
                                         </a>
                                     </li>
                                 ))}
@@ -50,10 +56,15 @@ export default function Footer() {
                         <div>
                             <h4 style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#ffffff' }}>SOLUTIONS</h4>
                             <ul className="mt-5 flex flex-col gap-4">
-                                {['Value Estimate', 'Calculator', 'Market Evaluation', 'Market Trends'].map((item) => (
-                                    <li key={item}>
-                                        <a href="#" className="transition-colors hover:text-white" style={{ fontSize: '15px', color: '#94a3b8' }}>
-                                            {item}
+                                {[
+                                    { label: 'Value Estimate', href: '/cma' },
+                                    { label: 'Map Search', href: '/map-search' },
+                                    { label: 'Market Analysis', href: '/market-analysis' },
+                                    { label: 'CMA Report', href: '/cma' },
+                                ].map((item) => (
+                                    <li key={item.label}>
+                                        <a href={item.href} className="transition-colors hover:text-white" style={{ fontSize: '15px', color: '#94a3b8' }}>
+                                            {item.label}
                                         </a>
                                     </li>
                                 ))}
