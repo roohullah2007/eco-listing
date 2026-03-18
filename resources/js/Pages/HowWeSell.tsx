@@ -73,7 +73,7 @@ export default function HowWeSell() {
             {/* ═══ Hero Section ═══ */}
             <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1816' }}>
                 {/* Background image overlay */}
-                <div className="absolute inset-0" style={{ backgroundImage: 'url(/images/section-img.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25 }} />
+                <div className="absolute inset-0" style={{ backgroundImage: 'url(/images/01.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25 }} />
                 <div className="relative mx-auto px-4" style={{ maxWidth: '1280px', paddingTop: '80px', paddingBottom: '100px' }}>
                     <h1 style={{ fontSize: '52px', fontWeight: 800, color: '#ffffff', lineHeight: '1.1', marginBottom: '20px', maxWidth: '650px' }}>
                         Your Journey to a{' '}
