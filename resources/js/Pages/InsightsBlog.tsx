@@ -106,7 +106,7 @@ export default function InsightsBlog() {
                     >
                         <div className="md:w-1/2">
                             <img
-                                src="/images/realestatenews.jpg"
+                                src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
                                 alt="BC Housing Market 2026"
                                 className="h-full w-full object-cover"
                                 style={{ minHeight: '320px' }}
