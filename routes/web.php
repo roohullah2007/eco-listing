@@ -282,6 +282,22 @@ Route::get('/value-estimate', function () {
     return Inertia::render('ValueEstimate');
 })->name('value-estimate');
 
+Route::get('/insights', function () {
+    return Inertia::render('InsightsBlog');
+})->name('insights');
+
+Route::get('/seller-guides', function () {
+    return Inertia::render('SellerGuides');
+})->name('seller-guides');
+
+Route::get('/buyer-guide', function () {
+    return Inertia::render('BuyerGuide');
+})->name('buyer-guide');
+
+Route::get('/faq', function () {
+    return Inertia::render('FaqCenter');
+})->name('faq');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

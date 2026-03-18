@@ -75,10 +75,15 @@ export default function Footer() {
                         <div>
                             <h4 style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#ffffff' }}>KNOWLEDGE</h4>
                             <ul className="mt-5 flex flex-col gap-4">
-                                {['Insights Blog', 'Seller Guides', "Buyer's Guide", 'FAQ Center'].map((item) => (
-                                    <li key={item}>
-                                        <a href="#" className="transition-colors hover:text-white" style={{ fontSize: '15px', color: '#94a3b8' }}>
-                                            {item}
+                                {[
+                                    { label: 'Insights Blog', href: '/insights' },
+                                    { label: 'Seller Guides', href: '/seller-guides' },
+                                    { label: "Buyer's Guide", href: '/buyer-guide' },
+                                    { label: 'FAQ Center', href: '/faq' },
+                                ].map((item) => (
+                                    <li key={item.label}>
+                                        <a href={item.href} className="transition-colors hover:text-white" style={{ fontSize: '15px', color: '#94a3b8' }}>
+                                            {item.label}
                                         </a>
                                     </li>
                                 ))}
